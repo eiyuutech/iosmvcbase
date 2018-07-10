@@ -34,7 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E171DEC20F3BA8E0065E07F /* iosmvcbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosmvcbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E171DEC20F3BA8E0065E07F /* dev.iosmvcbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dev.iosmvcbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E171DEF20F3BA8E0065E07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E171DF120F3BA8E0065E07F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E171DF420F3BA8E0065E07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		2E171DED20F3BA8E0065E07F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E171DEC20F3BA8E0065E07F /* iosmvcbase.app */,
+				2E171DEC20F3BA8E0065E07F /* dev.iosmvcbase.app */,
 				2E171E0020F3BA8F0065E07F /* iosmvcbaseTests.xctest */,
 				2E171E0B20F3BA8F0065E07F /* iosmvcbaseUITests.xctest */,
 			);
@@ -142,7 +142,7 @@
 			);
 			name = iosmvcbase;
 			productName = iosmvcbase;
-			productReference = 2E171DEC20F3BA8E0065E07F /* iosmvcbase.app */;
+			productReference = 2E171DEC20F3BA8E0065E07F /* dev.iosmvcbase.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2E171DFF20F3BA8F0065E07F /* iosmvcbaseTests */ = {
@@ -312,10 +312,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2E171E1220F3BA8F0065E07F /* Debug */ = {
+		2E171E1220F3BA8F0065E07F /* Develop */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_ID_SUFFIX = .dev;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -347,6 +348,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EIYUUHERO = Developing;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -366,16 +368,18 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D DEVELOP";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEVELOP;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = Develop;
 		};
 		2E171E1320F3BA8F0065E07F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_ID_SUFFIX = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -407,6 +411,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EIYUUHERO = Production;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -426,10 +431,10 @@
 			};
 			name = Release;
 		};
-		2E171E1520F3BA8F0065E07F /* Debug */ = {
+		2E171E1520F3BA8F0065E07F /* Develop */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TA299Y9HY4;
 				INFOPLIST_FILE = iosmvcbase/Info.plist;
@@ -437,17 +442,18 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eiyuu.iosmvcbase;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eiyuu.iosmvcbase${BUNDLE_ID_SUFFIX}";
+				PRODUCT_NAME = "${PRODUCT_NAME_PREFIX}$(TARGET_NAME)";
+				PRODUCT_NAME_PREFIX = dev.;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Develop;
 		};
 		2E171E1620F3BA8F0065E07F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TA299Y9HY4;
 				INFOPLIST_FILE = iosmvcbase/Info.plist;
@@ -455,14 +461,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eiyuu.iosmvcbase;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eiyuu.iosmvcbase${BUNDLE_ID_SUFFIX}";
+				PRODUCT_NAME = "${PRODUCT_NAME_PREFIX}$(TARGET_NAME)";
+				PRODUCT_NAME_PREFIX = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		2E171E1820F3BA8F0065E07F /* Debug */ = {
+		2E171E1820F3BA8F0065E07F /* Develop */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -481,7 +488,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iosmvcbase.app/iosmvcbase";
 			};
-			name = Debug;
+			name = Develop;
 		};
 		2E171E1920F3BA8F0065E07F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -504,7 +511,7 @@
 			};
 			name = Release;
 		};
-		2E171E1B20F3BA8F0065E07F /* Debug */ = {
+		2E171E1B20F3BA8F0065E07F /* Develop */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -522,7 +529,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = iosmvcbase;
 			};
-			name = Debug;
+			name = Develop;
 		};
 		2E171E1C20F3BA8F0065E07F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -544,13 +551,137 @@
 			};
 			name = Release;
 		};
+		2E171E1D20F3BC4C0065E07F /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_ID_SUFFIX = .stage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EIYUUHERO = Staging;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"STAGING=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D STAGING";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAGING;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Staging;
+		};
+		2E171E1E20F3BC4C0065E07F /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TA299Y9HY4;
+				INFOPLIST_FILE = iosmvcbase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eiyuu.iosmvcbase${BUNDLE_ID_SUFFIX}";
+				PRODUCT_NAME = "${PRODUCT_NAME_PREFIX}$(TARGET_NAME)";
+				PRODUCT_NAME_PREFIX = stage.;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
+		};
+		2E171E1F20F3BC4C0065E07F /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TA299Y9HY4;
+				INFOPLIST_FILE = iosmvcbaseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eiyuu.iosmvcbaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iosmvcbase.app/iosmvcbase";
+			};
+			name = Staging;
+		};
+		2E171E2020F3BC4C0065E07F /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TA299Y9HY4;
+				INFOPLIST_FILE = iosmvcbaseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eiyuu.iosmvcbaseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iosmvcbase;
+			};
+			name = Staging;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2E171DE720F3BA8E0065E07F /* Build configuration list for PBXProject "iosmvcbase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E171E1220F3BA8F0065E07F /* Debug */,
+				2E171E1220F3BA8F0065E07F /* Develop */,
+				2E171E1D20F3BC4C0065E07F /* Staging */,
 				2E171E1320F3BA8F0065E07F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -559,7 +690,8 @@
 		2E171E1420F3BA8F0065E07F /* Build configuration list for PBXNativeTarget "iosmvcbase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E171E1520F3BA8F0065E07F /* Debug */,
+				2E171E1520F3BA8F0065E07F /* Develop */,
+				2E171E1E20F3BC4C0065E07F /* Staging */,
 				2E171E1620F3BA8F0065E07F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -568,7 +700,8 @@
 		2E171E1720F3BA8F0065E07F /* Build configuration list for PBXNativeTarget "iosmvcbaseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E171E1820F3BA8F0065E07F /* Debug */,
+				2E171E1820F3BA8F0065E07F /* Develop */,
+				2E171E1F20F3BC4C0065E07F /* Staging */,
 				2E171E1920F3BA8F0065E07F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -577,7 +710,8 @@
 		2E171E1A20F3BA8F0065E07F /* Build configuration list for PBXNativeTarget "iosmvcbaseUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E171E1B20F3BA8F0065E07F /* Debug */,
+				2E171E1B20F3BA8F0065E07F /* Develop */,
+				2E171E2020F3BC4C0065E07F /* Staging */,
 				2E171E1C20F3BA8F0065E07F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
