@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 1aacf2b91e976a2b92f0d9ae2ce2d6e1460b4538
+PODS:
+  - JGProgressHUD (2.0.3)
+
+DEPENDENCIES:
+  - JGProgressHUD
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JGProgressHUD
+
+SPEC CHECKSUMS:
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
+
+PODFILE CHECKSUM: 88fe7349f220b01836394f75d3ce92e192d3d2e6
 
 COCOAPODS: 1.5.3

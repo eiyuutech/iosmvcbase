@@ -7,16 +7,21 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
+//import JGProgressHUD
+class ViewController: BaseViewController {
 
     @IBOutlet weak var labelName: UILabel!
     
+    //var hud: JGProgressHUD!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.testEnv()
+//        super.showWaitView(status: "", style: .dark)
+        super.showWaitView(status: "Loading", style: .dark)
+        super.hideWaitView()
     }
+
     func testEnv() -> Void {
 //        #if DEVELOP
 //            self.labelName.text = "hello em"

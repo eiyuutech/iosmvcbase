@@ -6,7 +6,7 @@ target 'iosmvcbase' do
   use_frameworks!
 
   # Pods for iosmvcbase
-
+  pod 'JGProgressHUD'
   target 'iosmvcbaseTests' do
     inherit! :search_paths
     # Pods for testing
